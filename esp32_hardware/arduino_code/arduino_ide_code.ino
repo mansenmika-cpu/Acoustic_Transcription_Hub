@@ -6,7 +6,7 @@
 #include "arduinoFFT.h"
 #include <math.h>
 
-// --- BLE SETUP (UPDATED TO MATCH FLUTTER APP) ---
+// --- BLE SETUP ---
 #define SERVICE_UUID           "4fafc201-1fb5-459e-8fcc-c5c9c331914b" 
 #define CHARACTERISTIC_UUID_TX "beb5483e-36e1-4688-b7f5-ea07361b26a8" 
 
@@ -79,7 +79,7 @@ void setup() {
   i2s_setpin();
   i2s_start(I2S_PORT);
 
-  // UPDATED: Device name matches Flutter scanner
+  // Device name matches Flutter scanner
   BLEDevice::init("Phase_Shift_Mic"); 
   pServer = BLEDevice::createServer();
   pServer->setCallbacks(new MyServerCallbacks());
